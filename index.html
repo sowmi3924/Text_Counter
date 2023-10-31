@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>textcounter</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        background-color: rgba(199, 13, 143, 0.795);
+      }
+      .container {
+        background-color: salmon;
+        min-height: 400px;
+        min-width: 300px;
+        display: block;
+        border-radius: 30px;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+      }
+      #text {
+        border: 2px solid gray;
+        border-radius: 7px;
+        font-size: 18px;
+      }
+      #text:hover {
+        border: 2px solid black;
+      }
+
+      #char {
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Text Counter</h1>
+      <form>
+        <textarea
+          name="text"
+          id="text"
+          cols="30"
+          rows="5"
+          placeholder="Type your text here..."
+        ></textarea>
+        <p><span id="char">0</span> Characters</p>
+      </form>
+    </div>
+    <script>
+      let text = document.getElementById("text");
+      let char = document.getElementById("char");
+      text.addEventListener("input", function () {
+        let content = this.value;
+        char.textContent = content.length;
+        console.log(content);
+      });
+    </script>
+  </body>
+</html>
